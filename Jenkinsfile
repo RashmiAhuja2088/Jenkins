@@ -35,6 +35,8 @@ pipeline{
 				echo BRANCH_NAME
 				
 				bat "python sample.py"
+				writeFile file: 'NewFile.txt', text: '''Sample HEADLINE'''
+                		echo "New File created..."
 			}
 		}
 		stage('deploy'){
