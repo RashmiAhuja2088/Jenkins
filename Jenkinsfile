@@ -49,10 +49,7 @@ pipeline{
 				script {
 					content = readFile "${WORKSPACE}/zorg.txt"
 					lines = content.split("\n")
-				}
-				for (String target : lines)
-				{
-					echo $target
+					echo $lines
 				}
 			}
 		}
