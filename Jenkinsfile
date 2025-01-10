@@ -12,7 +12,7 @@ pipeline{
   			}
 			steps{
 				echo 'Testing the application'
-				sh 'python ./PythonScripts/sample.py'
+				sh 'python sample.py'
 			}
 		}
 		stage('deploy'){
