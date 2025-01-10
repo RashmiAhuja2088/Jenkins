@@ -12,6 +12,7 @@ pipeline{
   			}
 			steps{
 				echo 'Testing the application'
+				echo BRANCH_NAME
 				sh 'python sample.py'
 			}
 		}
