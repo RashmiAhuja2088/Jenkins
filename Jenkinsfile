@@ -9,8 +9,12 @@ pipeline{
 			steps{
 				echo 'Building the code'
 				echo "Building version "+env.NEW_VERSION
-				echo "Using credentials "+env.SERVER_CRED
-				
+				//echo "Using credentials "+env.SERVER_CRED
+				withCredentials([
+					usernamePassword(credentials: 'Github-cred', usernameVariable: USER, passwordVariable: PWD)
+				]){
+					echo "User and Pass :- ${USER} ${PWD}"
+				}
 			}
 		}
 		stage('test'){
