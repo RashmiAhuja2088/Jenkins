@@ -12,8 +12,7 @@ pipeline{
   			}
 			steps{
 				echo 'Testing the application'
-				sh 'dir'
-				sh 'python sample.py'
+				sh 'python --version'
 			}
 		}
 		stage('deploy'){
