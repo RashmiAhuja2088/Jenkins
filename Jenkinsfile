@@ -12,7 +12,7 @@ pipeline{
   			}
 			steps{
 				echo 'Testing the application'
-				sh 'python --version'
+				bat "python --version"
 			}
 		}
 		stage('deploy'){
