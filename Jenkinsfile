@@ -4,6 +4,9 @@ pipeline{
 		NEW_VERSION='1.3.2'
 		SERVER_CRED=credentials('Github-cred')
 	}
+	parameters{
+		booleanParam(name: 'executeTests', defaultValue: true, description:'')
+	}
 	stages{
 		stage('build'){
 			steps{
@@ -22,7 +25,7 @@ pipeline{
 		}
 		stage('test'){
 			when {
-    				branch 'dev'
+    				(branch 'dev') & (params.executeTests == true)
   			}
 			steps{
 				echo 'Testing the application'
