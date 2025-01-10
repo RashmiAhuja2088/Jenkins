@@ -46,10 +46,7 @@ pipeline{
 			steps {
 				script {
 					def filePath = readFile "${WORKSPACE}/zorg.txt"
-					def lines = filePath.readLines() 
-      					for (line in lines) {
-						echo $line
-					}
+					echo "${filePath}"
 				}
 			}
 		}
