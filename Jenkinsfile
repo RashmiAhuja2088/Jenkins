@@ -1,5 +1,3 @@
-def content
-def lines
 pipeline{
 	agent any
 	environment{
@@ -47,8 +45,8 @@ pipeline{
 		stage('read'){
 			steps {
 				script {
-					content = readFile "${WORKSPACE}/zorg.txt"
-					lines = content.split("\n")
+					def content = readFile "${WORKSPACE}/zorg.txt"
+					def lines = content.split("\n")[n]
 					echo $lines
 				}
 			}
