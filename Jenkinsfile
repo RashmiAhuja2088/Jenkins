@@ -29,9 +29,9 @@ pipeline{
 					expression {
     						params.executeTests == true && BRANCH_NAME == 'dev'
 					}
-					//expression {
-					//	BRANCH_NAME == 'dev'
-					//}
+					expression {
+						env.NEW_VERSION == "1.3.2"
+					}
 				}
   			}
 			steps{
