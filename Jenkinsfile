@@ -2,12 +2,15 @@ pipeline{
 	agent any
 	environment{
 		NEW_VERSION='1.3.2'
+		SERVER_CRED=credentials('Github-cred')
 	}
 	stages{
 		stage('build'){
 			steps{
 				echo 'Building the code'
-				echo "Building version"+env.NEW_VERSION
+				echo "Building version "+env.NEW_VERSION
+				echo "Using credentials "+env.SERVER_CRED
+				
 			}
 		}
 		stage('test'){
