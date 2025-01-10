@@ -48,7 +48,6 @@ pipeline{
 					def content = readFile "${WORKSPACE}/zorg.txt"
 					def lines = content.split("\n")
 					echo ${content}
-					echo ${lines}
 				}
 			}
 		}
