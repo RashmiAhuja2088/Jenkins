@@ -11,7 +11,7 @@ pipeline{
 				echo "Building version "+env.NEW_VERSION
 				//echo "Using credentials "+env.SERVER_CRED
 				withCredentials([
-					usernamePassword(credentials: 'Github-cred', usernameVariable: USER, passwordVariable: PWD)
+					usernamePassword(credentialsId: 'Github-cred', usernameVariable: USER, passwordVariable: PWD)
 				]){
 					echo "User and Pass :- ${USER} ${PWD}"
 				}
