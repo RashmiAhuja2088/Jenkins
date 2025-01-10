@@ -24,7 +24,9 @@ pipeline{
 			}
 		}
 		stage ('Starting another job') {
-			build job: 'freestyleJob'
+			steps {
+				build job: 'freestyleJob'
+			}
 		}
 		stage('test'){
 			when {
