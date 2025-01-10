@@ -47,8 +47,8 @@ pipeline{
 				script {
 					def content = readFile "${WORKSPACE}/zorg.txt"
 					def lines = content.split("\n")
-					for (line in lines) {
-						echo $line
+					for (String target : lines){
+						echo $target
 					}
 				}
 			}
