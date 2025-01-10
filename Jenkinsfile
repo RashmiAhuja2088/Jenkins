@@ -32,9 +32,12 @@ pipeline{
   			}
 			steps{
 				echo 'Testing the application'
-				echo BRANCH_NAME
-				
+				echo BRANCH_NAME	
 				bat "python sample.py"
+			}
+		}
+		stage('write'){
+			steps {
 				script {
 					def data = "Hello World\nSecond line\nThird Line"
                    			writeFile(file: 'zorg.txt', text: data)
