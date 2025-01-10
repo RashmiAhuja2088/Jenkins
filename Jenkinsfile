@@ -33,11 +33,7 @@ pipeline{
 			steps{
 				echo 'Testing the application'
 				echo BRANCH_NAME
-				def filePath = readFile "${WORKSPACE}/sample.py"
-				def lines = filePath.readLines() 
-      				for (line in lines) {
-					echo $line
-				}
+				
 				bat "python sample.py"
 			}
 		}
