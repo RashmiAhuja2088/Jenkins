@@ -35,9 +35,11 @@ pipeline{
 				echo BRANCH_NAME
 				
 				bat "python sample.py"
-				def data = "Hello World\nSecond line\nThird Line"
-                   		writeFile(file: 'zorg.txt', text: data)
-                		echo "New File created..."
+				script {
+					def data = "Hello World\nSecond line\nThird Line"
+                   			writeFile(file: 'zorg.txt', text: data)
+                			echo "New File created..."
+				}
 			}
 		}
 		stage('deploy'){
