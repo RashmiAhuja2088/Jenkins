@@ -3,8 +3,7 @@ pipeline{
 	stages{
 		stage('clone'){
 			steps{
-				sh 'git clone https://github.com/RashmiAhuja2088/Jenkins.git'
-				sh 'git checkout main'
+				git clone https://github.com/RashmiAhuja2088/Jenkins.git
 			}
 		}
 		stage('build'){
