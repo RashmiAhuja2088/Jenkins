@@ -25,7 +25,7 @@ pipeline{
 		}
 		stage('test'){
 			when {
-    				(BRANCH_NAME == 'dev') & (params.executeTests == true)
+    				params.executeTests == true
   			}
 			steps{
 				echo 'Testing the application'
