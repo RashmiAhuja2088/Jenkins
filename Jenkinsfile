@@ -35,7 +35,10 @@ pipeline{
 				echo BRANCH_NAME
 				
 				bat "python sample.py"
-				writeFile file: 'NewFile.txt', text: '''Sample HEADLINE'''
+				writeFile file: 'NewFile.txt', text: '''Sample HEADLINE
+				Line 2
+				Line 3
+				Line 4'''
                 		echo "New File created..."
 			}
 		}
