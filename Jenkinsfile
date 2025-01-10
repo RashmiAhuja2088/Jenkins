@@ -4,6 +4,7 @@ pipeline{
 		stage('build'){
 			steps{
 				echo 'Building the code'
+				echo "BRANCH_NAME is " + ${env.BRANCH_NAME}
 			}
 		}
 		stage('test'){
@@ -12,8 +13,7 @@ pipeline{
   			}
 			steps{
 				echo 'Testing the application'
-				echo '$PATH'
-				bat "python --version"
+				bat "python sample.py"
 			}
 		}
 		stage('deploy'){
