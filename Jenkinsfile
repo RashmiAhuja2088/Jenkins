@@ -12,6 +12,7 @@ pipeline{
   			}
 			steps{
 				echo 'Testing the application'
+				echo '%PATH%'
 				bat "python --version"
 			}
 		}
