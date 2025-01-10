@@ -1,11 +1,6 @@
 pipeline{
 	agent any
 	stages{
-		stage('clone'){
-			steps{
-				git clone https://github.com/RashmiAhuja2088/Jenkins.git
-			}
-		}
 		stage('build'){
 			steps{
 				echo 'Building the code'
