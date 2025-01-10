@@ -1,9 +1,13 @@
 pipeline{
 	agent any
+	environment{
+		NEW_VERSION='1.3.2'
+	}
 	stages{
 		stage('build'){
 			steps{
 				echo 'Building the code'
+				echo "Building version ${NEW_VERSION}"
 			}
 		}
 		stage('test'){
@@ -23,6 +27,17 @@ pipeline{
 			steps{
 				echo 'deploying the application'
 			}
+		}
+	}
+	post{
+		always{
+			echo 'Job Executed'
+		}
+		success{
+			echo 'Job Executed Successfully'
+		}
+		failure{
+			echo 'Job Execution Failed'
 		}
 	}
 }
