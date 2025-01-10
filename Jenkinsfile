@@ -27,11 +27,11 @@ pipeline{
 			when {
 				anyOf {
 					expression {
-    						params.executeTests == true
+    						params.executeTests == true && BRANCH_NAME == 'dev'
 					}
-					expression {
-						BRANCH_NAME == 'dev'
-					}
+					//expression {
+					//	BRANCH_NAME == 'dev'
+					//}
 				}
   			}
 			steps{
