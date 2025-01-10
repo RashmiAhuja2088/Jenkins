@@ -45,9 +45,7 @@ pipeline{
 		stage('read'){
 			steps {
 				script {
-					def content = readFile "${WORKSPACE}/zorg.txt"
-					def lines = content.split("\n")
-					echo ${content}
+					readFile "${WORKSPACE}/zorg.txt"
 				}
 			}
 		}
