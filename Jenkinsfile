@@ -7,7 +7,7 @@ pipeline{
 		stage('build'){
 			steps{
 				echo 'Building the code'
-				echo "Building version env.NEW_VERSION"
+				echo "Building version"+env.NEW_VERSION
 			}
 		}
 		stage('test'){
