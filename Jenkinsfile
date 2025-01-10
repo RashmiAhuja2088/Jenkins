@@ -46,8 +46,10 @@ pipeline{
 			steps {
 				script {
 					def data = readFile(file: 'zorg.txt')
-					//for (d in data)
-                   			println(data)
+					for (d in data) {
+						println("Line")
+						println(d)
+					}
 				}
 			}
 		}
