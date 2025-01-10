@@ -42,6 +42,17 @@ pipeline{
 				}
 			}
 		}
+		stage('read'){
+			steps {
+				script {
+					def filePath = readFile "${WORKSPACE}/zorg.txt"
+					def lines = filePath.readLines() 
+      					for (line in lines) {
+						echo $line
+					}
+				}
+			}
+		}
 		stage('deploy'){
 			when {
     				branch 'main'
