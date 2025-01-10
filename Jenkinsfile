@@ -46,8 +46,8 @@ pipeline{
 			steps {
 				script {
 					def content = readFile "${WORKSPACE}/zorg.txt"
-					def lines = content.split("\n")[n]
-					echo $lines
+					def lines = content.split("\n")
+					echo $content
 				}
 			}
 		}
