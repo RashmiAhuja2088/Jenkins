@@ -7,8 +7,12 @@ pipeline{
 			}
 		}
 		stage('test'){
+			when {
+    				branch 'dev'
+  			}
 			steps{
 				echo 'Testing the application'
+				sh 'python ./PythonScripts/sample.py'
 			}
 		}
 		stage('deploy'){
