@@ -25,9 +25,13 @@ pipeline{
 		}
 		stage('test'){
 			when {
-				expression {
-    					params.executeTests == true
-					BRANCH_NAME == 'dev'
+				anyOf {
+					expression {
+    						params.executeTests == true
+					}
+					expression {
+						BRANCH_NAME == 'dev'
+					}
 				}
   			}
 			steps{
