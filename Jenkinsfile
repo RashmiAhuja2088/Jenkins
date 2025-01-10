@@ -27,6 +27,7 @@ pipeline{
 			when {
 				expression {
     					params.executeTests == true
+					BRANCH_NAME == 'dev'
 				}
   			}
 			steps{
